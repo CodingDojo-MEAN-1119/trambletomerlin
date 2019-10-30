@@ -11,6 +11,10 @@ Ninja.prototype.sayName = function() {
 Ninja.prototype.showStats = function() {
     console.log("Name:"+ this.name,"Health:" + this.health, 'Speed:' + this.speed, 'Strength:' + this.stregth );
 };
+Ninja.prototype.drinkSake = function() {
+    this.health += 10;
+    return this;
+}
 
 var tramble = new Ninja('Tramble');
 
