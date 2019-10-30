@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hunting Git</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<style>
+*, body{
+    padding: 0px;
+    margin: 0px;
+    background: black;
+}
+.wrapper{
+    width: 950px;
+}
+.btn{
+    margin: 30px;
+}
+.return{
+    margin: 20px;
+    color: yellow;
+}
+</style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <button class= "btn btn-danger search-github-btn" type="button">Click to Search Github</button>
+        <div class="return">
+
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$('.search-github-btn').click(function(){
+    $.get("https://api.github.com/users/tomerltn", displayName)
+});
+var count = 0
+function displayName(data) {
+    count += 1
+    $(".return").append(`User: ${data.login}, Users Name: ${data.name}, Request #: ${count} <br>`)
+}
+</script>
+</body>
+</html>
