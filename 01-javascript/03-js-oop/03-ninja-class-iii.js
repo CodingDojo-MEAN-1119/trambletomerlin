@@ -32,6 +32,7 @@ class Sensei extends Ninja{
 }
 
 Ninja.prototype.speakWisdom = function(Ninja){
+    super.drinkSake();
     console.log ("What one programmer can do in one month, two programmers can do in two months.")
 }
   
