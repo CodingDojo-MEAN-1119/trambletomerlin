@@ -15,7 +15,6 @@ Ninja.prototype.punch = function(ninja) {
     this.health -= 5;
     console.log(ninja.name + " was punched by " + this.name + " and lost 5 Health!");
     return this;
-
 }
 Ninja.prototype.drinkSake = function(ninja) {
     this.health += 10;
@@ -27,8 +26,6 @@ Ninja.prototype.kick = function(ninja) {
     console.log(ninja.name + "was kicked by" + this.name + "and lost 5 health!");
     return this;
 }
-
-
 const tramble = new Ninja('Tramble');
 
 const blueNinja = new Ninja('Goemon');
