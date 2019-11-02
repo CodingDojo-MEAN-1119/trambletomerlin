@@ -1,0 +1,12 @@
+<html>
+<body>
+    <h2>Here are all the cats!:</h2>
+  
+    <% for (const [index, cat] of cats.entries()){ %>
+        <h3>Name: <%= cat.name %></h3>
+        <h4>age: <%= cat.age %></h4>
+        <a href="/cats/<%= index %>"><img src="<%= cat.img %>" alt="cat img"></a>
+        <hr>
+    <% } %>
+</body>
+</html>
