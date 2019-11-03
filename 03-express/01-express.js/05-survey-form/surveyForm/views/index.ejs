@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <form class='wrapper' action="/" method="POST">
+        <h2>Survey Form</h2>
+        <label for="exampleFormControlSelect1">Your Name</label>
+        <input class="form-control" type="text" placeholder="Your Name" name="name">
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Dojo Location</label>
+            <select class="form-control" id="exampleFormControlSelect1" name="location">
+              <option>Seattle</option>
+              <option>Chicago</option>
+              <option>Houston</option>
+              <option>Oakland</option>
+              <option>Online</option>
+            </select>
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Favorite Language</label>
+            <select class="form-control" id="exampleFormControlSelect1" name="lang">
+                <option>Java</option>
+                <option>Javascript</option>
+                <option>Python</option>
+                <option>C#</option>
+                <option>Ruby</option>
+            </select>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Comment (optional)</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="comment"></textarea>
+            </div>
+            <input class="btn btn-success" type="submit" name="Submit" id="">
+
+    </form>
+
+</body>
+</html>
