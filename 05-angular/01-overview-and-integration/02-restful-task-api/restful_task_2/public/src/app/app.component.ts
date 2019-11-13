@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpService } from './http.service';
 
 @Component({
@@ -6,7 +6,14 @@ import { HttpService } from './http.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'public';
-  constructor(private _httpService: HttpService){}
+export class AppComponent implements OnInit {
+
+  constructor (private taskService : HttpService){
+    
+ 
+  }
+  ngOnInit(): void {
+    console.log(this.taskService);
+    console.log("tramble");
+  }
 }
