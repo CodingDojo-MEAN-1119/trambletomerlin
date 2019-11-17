@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<h3 *ngIf="authors.length > 0">All Authors</h3>
+<mat-list *ngFor="let author of authors" >
+    <mat-list-item> {{author.name}} </mat-list-item>
+    <mat-action-list>
+            <a mat-button color='primary' [routerLink] = "['/edit', author.id]"> Edit </a>
+            <button mat-button color='warn' (click)="onDelete(author.id)"> Delete </button>
+            <button mat-button color='accent' (click)="delete()"> View </button>
+    </mat-action-list>
+</mat-list>
+<p class='info-text mat-body-1' *ngIf='authors.length <= 0'> No authors added yet!</p>
+</body>
+</html>

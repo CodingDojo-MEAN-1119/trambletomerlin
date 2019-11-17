@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Authors</title>
+</head>
+<body>
+    <mat-card> 
+    <form (submit)="onSaveAuthor(authorForm)" #authorForm="ngForm"> 
+        <h3>Author</h3>
+        <mat-form-field> 
+            <input 
+            matInput 
+            type="text" 
+            name="name" 
+            [ngModel]= 'author.name'
+            placeholder="Author Name" 
+            required
+            minlength='3'
+            #name='ngModel'
+            >
+            <mat-error *ngIf="name.invalid">Please Enter a Name</mat-error>
+        </mat-form-field>
+            <button 
+                mat-raised-button color='warn' 
+                type="submit"
+            >
+                Save Author
+            </button>
+            <a mat-raised-button routerLink="/" routerLinkActive="primary">View All</a>
+    </form>
+    </mat-card>
+</body>
+</html>
