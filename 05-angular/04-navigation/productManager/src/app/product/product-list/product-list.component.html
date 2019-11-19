@@ -1,0 +1,30 @@
+<h3>Products <span class="badge badge-secondary">All</span></h3>
+
+<table class="table table-striped">
+  
+        <thead>
+          <tr>
+            <th scope="col">Image</th>
+            <th scope="col">Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Price</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr 
+          *ngFor="let product of products"
+          [routerLink]='product._id'
+          >
+            <th scope="row">{{product.imgUrl}}</th>
+            <td>{{product._id}}</td>
+            <td>{{product.title}}</td>
+            <td>{{product.price}}</td>
+            <td> 
+              <button class="btn btn-danger" (click)="onDelete($event, product._id)">Delete</button> 
+              <a class='btn btn-warning' [routerLink]= "[product._id, 'edit']">Edit</a>
+            </td>
+          </tr>
+          </tbody>
+  
+</table>
