@@ -14,7 +14,7 @@ import { Author } from '../authors.model';
 export class AuthorCreateComponent implements OnInit {
     enteredName = '';
     newAuthor = 'Add Author Name Here!';
-    author: Author;
+    author = new Author();
     private mode = 'create';
     private authorId: string;
 
@@ -40,9 +40,11 @@ export class AuthorCreateComponent implements OnInit {
         if (form.invalid) {
             return;
         }
-        if (this.mode === 'create'){
+        if (this.mode === 'create') {
+            console.log('create');
             this.authorsService.addAuthor(form.value.name);
         } else {
+            console.log('update');
             this.authorsService.updateAuthor(
                 this.authorId,
                 form.value.name

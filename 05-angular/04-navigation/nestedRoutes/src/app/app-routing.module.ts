@@ -10,7 +10,6 @@ import { ReviewsDetailComponent } from './products_and_reviews/reviews-detail/re
 import { ReviewsAuthorComponent } from './products_and_reviews/reviews-author/reviews-author.component';
 import { ReviewsAllComponent } from './products_and_reviews/reviews-all/reviews-all.component';
 
-
 const routes: Routes = [
   {
   path: '',

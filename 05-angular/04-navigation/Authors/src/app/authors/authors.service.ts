@@ -51,7 +51,7 @@ export class AuthorsService {
 
     updateAuthor(id: string, name: string ) {
         const author: Author = {id, name};
-        this.http.put('http://localhost:8000/authors/' + author, author)
+        this.http.put('http://localhost:8000/authors/' + author.id, author)
                 .subscribe(response => console.log(response));
     }
 
