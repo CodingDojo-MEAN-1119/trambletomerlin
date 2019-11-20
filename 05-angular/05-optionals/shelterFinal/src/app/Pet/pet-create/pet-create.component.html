@@ -1,0 +1,61 @@
+<form (submit)='onSubmit($event, petForm)'
+#petForm='ngForm'
+>
+<div class="card">
+    <h3>Pet <span class="badge badge-secondary">Create</span></h3>
+    <h5>Know of a pet needing a home?</h5>
+    <label for="exampleFormControlFile1">Pet Name</label>
+    <input 
+        class="form-control" 
+        type="text" 
+        placeholder="Pet Name Here"
+        name="name"
+        [ngModel]='pet.name'>
+    
+    <label for="exampleFormControlFile1">Title</label>
+    <input 
+        class="form-control" 
+        type="text" 
+        placeholder="Pet Type"
+        name="type"
+        [ngModel]='pet.type'>
+    <label for="exampleFormControlFile1">Description</label>
+    
+    <input class="form-control" 
+        id="exampleFormControlSelect2"
+        rows="3"
+        type="text" 
+        placeholder="description Here"
+        name="description"
+        [ngModel]='pet.description'>
+    <div class='skills'> 
+        <h4 >Skills (Optional)</h4>
+        <label for="exampleFormControlFile1">Skill</label>
+        <input 
+            class="form-control" 
+            type="text" 
+            placeholder="Skill Here"
+            name="Skill1"
+            [ngModel]='pet.skill1'>
+        <label for="exampleFormControlFile1">Skill</label>
+        <input 
+            class="form-control" 
+            type="text" 
+            placeholder="Skill Here"
+            name="Skill1"
+            [ngModel]='pet.skill2'>
+            <label for="exampleFormControlFile1">Skill</label>
+        <input 
+            class="form-control" 
+            type="text" 
+            placeholder="Skill Here"
+            name="Skill3"
+            [ngModel]='pet.skill3'>
+    </div>
+    <div class="buttons">
+        <button class="btn btn-success" *ngIf='petForm.valid'>  Submit</button>
+        <a class="btn btn-danger" routerLink="/pets">Cancel</a>
+    </div>
+    
+</div>
+</form>

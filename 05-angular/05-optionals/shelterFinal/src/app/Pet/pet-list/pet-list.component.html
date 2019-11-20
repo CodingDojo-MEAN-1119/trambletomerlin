@@ -1,0 +1,28 @@
+<div class="wrapper">
+<h3>Pets <span class="badge badge-secondary">All</span></h3>
+<h5>These pets are looking for a home!</h5>
+</div>
+<div class="card">
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr 
+          *ngFor="let pet of pets"
+          >
+            <th scope="row">{{pet.name}}</th>
+            <td>{{pet.type}}</td>
+            <td> 
+              <button class="btn btn-success" [routerLink] ='pet._id' >Details</button> 
+              <a class='btn btn-warning' [routerLink]= "[pet._id, 'edit']">Edit</a>
+            </td>
+          </tr>
+          </tbody>
+  
+    </table>
+</div>

@@ -1,0 +1,17 @@
+
+<div class='card'>
+    <div class=inside>
+    
+        <h3>Pet <span class="badge badge-secondary">View</span></h3>
+        <h5>Details about {{pet?.name}}</h5>
+        <p>ID: {{ pet?._id }}</p>
+        <p>Name: {{ pet?.name }}</p>
+        <p>Pet Type: {{ pet?.type }}</p>
+        <p>Description: {{ pet?.description }}</p>
+        <p>Skills: {{ pet?.skill1 }}</p>
+        <p> {{ pet?.skill2 }}</p>
+        <p> {{ pet?.skill3 }}</p>
+        <button class="btn btn-danger" (click)='onEvent($event)' (click)="onDelete($event, pet._id)"  href='/pets' >Adopt this pet!</button>
+    </div>
+</div>
+     

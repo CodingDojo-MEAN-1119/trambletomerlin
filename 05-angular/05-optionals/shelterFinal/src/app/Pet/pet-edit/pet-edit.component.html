@@ -1,0 +1,90 @@
+<form (submit)='onSubmit($event, petForm)'
+#petForm='ngForm'
+>
+<div class="card">
+    <div class='inside'>
+    <h3>Pet <span class="badge badge-secondary">Edit</span></h3>
+    <h5>Edit this Pet</h5>
+    <label for="exampleFormControlFile1">Title</label>
+
+  
+
+    <input 
+        class="form-control" 
+        type="text" 
+        placeholder="Name Here"
+        name="name"
+        #name ='ngModel'
+        [ngModel]='pet?.name'
+        required
+        >
+        
+        <div *ngIf="(name.touched || name.dirty) && name.errors">
+            <div *ngIf="name?.errors?.required" class="alert alert-danger">
+                You must enter a valid pet name!
+            </div>
+        </div>
+    <input 
+        class="form-control" 
+        type="text" 
+        placeholder="Type Here"
+        name="type"
+        #type ='ngModel'
+        [ngModel]='pet?.type'
+        required
+        >
+        
+        <div *ngIf="(type.touched || type.dirty) && type.errors">
+            <div *ngIf="type?.errors?.required" class="alert alert-danger">
+                You must enter a valid pet type!
+            </div>
+        </div>
+    <input 
+        class="form-control" 
+        type="text" 
+        placeholder="Description Here"
+        name="description"
+        #description ='ngModel'
+        [ngModel]='pet?.description'
+        required
+        >
+        <div *ngIf="(description.touched || description.dirty) && description.errors">
+            <div *ngIf="description?.errors?.required" class="alert alert-danger">
+                You must enter a valid pet description!
+            </div>
+        </div>
+        <h4>Skills (Optional)</h4>
+    <input 
+        class="form-control" 
+        type="text" 
+    
+        name="skill1"
+        #skill1 ='ngModel'
+        placeholder="Fun"
+        [ngModel]='pet?.skill1'
+        >
+    <input 
+        class="form-control" 
+        type="text" 
+        
+        name="skill2"
+        #skill2 ='ngModel'
+        placeholder="Sleeps"
+        [ngModel]='pet?.skill2'
+        >
+    <input 
+        class="form-control" 
+        type="text" 
+        
+        name="skill3"
+        #skill3 ='ngModel'
+        placeholder="Farts"
+        [ngModel]='pet?.skill3'
+        >
+    <div class="buttons">
+        <button class="btn btn-success" >  Submit</button>
+        <a class="btn btn-danger" routerLink="/pets">Cancel</a>
+    </div>
+    </div>
+</div>
+</form>
