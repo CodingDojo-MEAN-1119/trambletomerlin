@@ -11,7 +11,35 @@
         <p>Skills: {{ pet?.skill1 }}</p>
         <p> {{ pet?.skill2 }}</p>
         <p> {{ pet?.skill3 }}</p>
-        <button class="btn btn-danger" (click)='onEvent($event)' (click)="onDelete($event, pet._id)"  href='/pets' >Adopt this pet!</button>
+        <div>
+            <h5>Toys for this Pet</h5>
+            <ul>
+                <li *ngFor=' let toy of pet?.toys'>{{toy.name}} - {{toy.description}}</li>
+                
+            </ul>
+        </div>
+        <button class="btn btn-danger" (click)="onDelete($event, pet._id)"  href='/pets' >Adopt this pet!</button>
+        <button class="btn btn-success"routerLink="toys"> Add Toy</button>
     </div>
 </div>
      
+<form (submit)='createToy(toyform)'#toyform = 'ngForm'>
+    
+    <div class=toycard> 
+    <h3>Add a Toy Here</h3>
+    <label for="exampleFormControlFile1">Name</label>
+    <input 
+    type="text" 
+    class="form-control" 
+    name="name"
+    [ngModel]='toy.name'>
+    <label for="exampleFormControlFile1">Description</label>
+    <input 
+    type="text" 
+    class="form-control" 
+    name="description"
+    [ngModel]='toy.description'>
+    <button class='btn btn-warning'>Create Toy</button>
+    </div>
+
+</form>

@@ -14,21 +14,20 @@ module.exports = {
             }
             );
     },
-    create(request, response) {
-        const thisPet = new Pet();
-        thisPet.name = request.body.name;
-        thisPet.type = request.body.type;
-        thisPet.description = request.body.description;
-        thisPet.skill1 = request.body.skill1;
-        thisPet.skill2 = request.body.skill2;
-        thisPet.skill3 = request.body.skill3;
-        thisPet.save()
-          .then(pet => response.json(pet))
-          .catch(errorHandler.bind(response));
+    create(req, res) {
+        Pet.create(req.body)
+        .then(pet =>{
+            console.log('success')
+            res.json(pet);
+        })
+        .catch(eror =>{
+            res.status(500).json(error)
+        });
       }, 
     show(req, res ){
         const petId = req.params.petId
         Pet.findById(petId)
+        .populate("toys")
         .then(pet => {
             console.log('viewing pet', pet)
             res.json(pet);

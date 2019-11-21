@@ -20,6 +20,7 @@
             <td> 
               <button class="btn btn-success" [routerLink] ='pet._id' >Details</button> 
               <a class='btn btn-warning' [routerLink]= "[pet._id, 'edit']">Edit</a>
+              <button [routerLink]="[pet._id, 'toys']"> Add Toy</button>
             </td>
           </tr>
           </tbody>

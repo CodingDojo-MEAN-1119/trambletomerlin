@@ -36,6 +36,13 @@ const PetSchema = new Schema({
         required: [false],
         trim: true,
     },
+    toys: [{
+         type: Schema.Types.ObjectId,
+         ref: 'Toy'           
+            }
+        ]
+
+
 },{
     timestamps: true
 });

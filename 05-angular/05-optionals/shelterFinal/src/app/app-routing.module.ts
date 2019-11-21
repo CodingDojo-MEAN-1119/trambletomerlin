@@ -8,6 +8,7 @@ import { PetEditComponent } from './Pet/pet-edit/pet-edit.component';
 
 import { environment } from '../environments/environment';
 import { HomeComponent } from './Pet/home/home.component';
+import { ToyCreateComponent } from './Toy/toy-create/toy-create.component';
 
 const enableTracing = false && !environment.production;
 
@@ -35,10 +36,15 @@ children: [
     {
       path: ':id',
       component: PetViewComponent
+    },
+    {
+      path: ':id/toys',
+      component: ToyCreateComponent
     }
   ]
 }
 ];
+
 
 @NgModule({
   imports: [

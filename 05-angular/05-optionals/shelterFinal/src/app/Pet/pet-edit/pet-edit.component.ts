@@ -15,11 +15,10 @@ import { from } from 'rxjs';
 export class PetEditComponent implements OnInit {
 
     pet: Pet;
-    petService: PetService;
 
   constructor(
     private route: ActivatedRoute,
-    private readonly petSerivce: PetService,
+    private readonly petService: PetService,
     private router: Router,
   ) { }
 
@@ -27,7 +26,7 @@ export class PetEditComponent implements OnInit {
     this.route.paramMap
     .pipe(
       map(params => params.get('id')),
-      switchMap(id => this.petSerivce.getPet(id)),
+      switchMap(id => this.petService.getPet(id)),
     )
     .subscribe(pet => {
       console.log('pet came from api', pet);
@@ -36,7 +35,7 @@ export class PetEditComponent implements OnInit {
   }
   onSubmit(event: Event, form: NgForm) {
     event.preventDefault();
-
+    console.log('were here.');
     this.petService.updatePet(this.pet)
       .subscribe(createdPet => {
         console.log(createdPet);

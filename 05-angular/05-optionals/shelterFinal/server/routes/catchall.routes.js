@@ -4,6 +4,6 @@ const path = require('path');
 
 module.exports = router.all('*',function(req, res){
     console.log(`caught route ${req.url}`);
-    const file = path.resolve('dist/petManager/index.html');
+    const file = path.resolve('dist/myApp/index.html');
     res.sendFile(file);
 });

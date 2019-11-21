@@ -1,0 +1,21 @@
+<form (submit)='createToy(toyform)'#toyform = 'ngForm'>
+    <div class='newtoy'> 
+    <h3>Toy <span class="badge badge-secondary">Add</span></h3>
+    <label for="exampleFormControlFile1">Name</label>
+    <input 
+    type="text" 
+    name="name"
+    class="form-control"
+    [ngModel]='toy.name'>
+
+    <label for="exampleFormControlFile1">Description</label>
+    <input 
+    type="text" 
+    name="description"
+    class="form-control"
+    [ngModel]='toy.description'>
+    <button class='btn btn-warning'>Create Toy</button>
+    </div>
+</form>
+
+

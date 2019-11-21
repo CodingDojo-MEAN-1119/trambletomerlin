@@ -1,10 +1,11 @@
 <form (submit)='onSubmit($event, petForm)'
 #petForm='ngForm'
 >
-<div class="card">
+ <div class="card">
     <div class='inside'>
     <h3>Pet <span class="badge badge-secondary">Edit</span></h3>
     <h5>Edit this Pet</h5>
+    
     <label for="exampleFormControlFile1">Title</label>
 
   
@@ -19,11 +20,8 @@
         required
         >
         
-        <div *ngIf="(name.touched || name.dirty) && name.errors">
-            <div *ngIf="name?.errors?.required" class="alert alert-danger">
-                You must enter a valid pet name!
-            </div>
-        </div>
+     
+       
     <input 
         class="form-control" 
         type="text" 
@@ -39,6 +37,7 @@
                 You must enter a valid pet type!
             </div>
         </div>
+     
     <input 
         class="form-control" 
         type="text" 
@@ -54,6 +53,7 @@
             </div>
         </div>
         <h4>Skills (Optional)</h4>
+       
     <input 
         class="form-control" 
         type="text" 
@@ -63,6 +63,7 @@
         placeholder="Fun"
         [ngModel]='pet?.skill1'
         >
+         
     <input 
         class="form-control" 
         type="text" 
@@ -72,6 +73,7 @@
         placeholder="Sleeps"
         [ngModel]='pet?.skill2'
         >
+        
     <input 
         class="form-control" 
         type="text" 
@@ -86,5 +88,5 @@
         <a class="btn btn-danger" routerLink="/pets">Cancel</a>
     </div>
     </div>
-</div>
-</form>
+</div> 
+</form> 

@@ -11,6 +11,7 @@ import { PetViewComponent } from './Pet/pet-view/pet-view.component';
 import { PetListComponent } from './Pet/pet-list/pet-list.component';
 import { HomeComponent } from './Pet/home/home.component';
 import { PetEditComponent } from './Pet/pet-edit/pet-edit.component';
+import { ToyCreateComponent } from './Toy/toy-create/toy-create.component';
 
 
 
@@ -23,6 +24,7 @@ import { PetEditComponent } from './Pet/pet-edit/pet-edit.component';
     PetListComponent,
     HomeComponent,
     PetEditComponent,
+    ToyCreateComponent,
   ],
   imports: [
     BrowserModule,

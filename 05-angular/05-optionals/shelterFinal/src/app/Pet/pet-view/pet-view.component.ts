@@ -3,7 +3,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { map, switchMap } from 'rxjs/operators';
 
 import { Pet } from '../../models/pets';
+import { Toy } from '../../models/toys';
 import { PetService } from '../../services/pet.service';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -15,6 +17,8 @@ export class PetViewComponent implements OnInit {
   @Input()
   pet: Pet;
   pets: Pet [] = [];
+  toy: Toy = new Toy();
+
 
   constructor(
     private petService: PetService,
@@ -22,6 +26,15 @@ export class PetViewComponent implements OnInit {
     private router: Router,
   ) {}
 
+  createToy(form: NgForm) {
+    this.petService.createToy({...form.value, pet: this.pet._id})
+    .subscribe( pet => {
+      form.reset();
+      console.log(pet);
+      this.pet = pet;  // Keep petservice vs toyservice
+      this.toy = new Toy();
+    });
+  }
   ngOnInit() {
     this.route.paramMap
       .pipe(
@@ -43,8 +56,5 @@ export class PetViewComponent implements OnInit {
     });
 
   }
-  onEvent(pet: Pet): void {
-    // tslint:disable-next-line: deprecation
-    event.stopPropagation();
-  }
+
 }
