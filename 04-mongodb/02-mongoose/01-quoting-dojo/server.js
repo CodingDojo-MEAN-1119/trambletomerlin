@@ -1,35 +1,25 @@
-const express = require("express");
-const app = express();
-const mongoose = require('mongoose');
-app.use(express.static(__dirname + "/static"));
-mongoose.connect('mongodb://localhost/quotes', {useNewUrlParser: true});
+const express = require('express'),
+    bodyParser = require('body-parser'),
+    mongoose = require('mongoose'),
+    path = require('path'),
+    port = 8000,
+    app = express();
 
-const quotesSchema = new quotes.Schema({
-    name: String,
-    quote: String
-   })
+// Set up body-parser to parse form data
+app.use(bodyParser.urlencoded({ extended: false }));
 
-const quote = mongoose.model('quote', quotesSchema);
+// Set up database connection, Schema, model
+mongoose.connect('mongodb://localhost/quoting_dojo');
 
-app.set('view engine', 'ejs');
-app.set('views', __dirname + '/views');
+const quoteSchema = new mongoose.Schema({
+  name: String,
+  quote: String
+});
 
-app.get("/", (req, res) => {
-    res.render('index');
-})
-app.get('/quotes', function(req, res) {
-    // Logic to grab all quotes and pass into the rendered view
-    Quote.find({}, function(err, quotes) {
-      if (err) { console.log(err); }
-      res.render('quotes', { quotes: quotes });
-    });
-  });
+const Quote = mongoose.model('quotes', quoteSchema);
 
-  app.post('/quotes', function(req, res) {
-    Quote.create(req.body, function(err) {
-      if (err) { console.log(err); }
-      res.redirect('/quotes');
-    });
-  });
+//Tramble add for route
+require('./server/config/routes.js')(app);
 
-app.listen(8000, () => console.log("listening on port 8000"));
+app.listen(port);
+

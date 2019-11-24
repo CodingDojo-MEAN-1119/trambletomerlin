@@ -13,6 +13,8 @@
     "ejs": "^2.7.1",
     "expres": "0.0.5",
     "express": "^4.17.1",
+    "express-flash": "0.0.2",
+    "flash": "^1.1.0",
     "mongoose": "^5.7.9"
   }
 }

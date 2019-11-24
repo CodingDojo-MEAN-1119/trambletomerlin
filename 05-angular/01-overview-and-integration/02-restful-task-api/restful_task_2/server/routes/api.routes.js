@@ -10,4 +10,5 @@ module.exports = router
 
   .put('/tasks/:id', ApiController.update)
 
-  .delete('/tasks/:id',ApiController.delete);
+  .delete('/tasks/:id',ApiController.delete)
+  

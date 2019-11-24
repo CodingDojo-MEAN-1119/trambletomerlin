@@ -36,7 +36,7 @@ export class PetEditComponent implements OnInit {
   onSubmit(event: Event, form: NgForm) {
     event.preventDefault();
     console.log('were here.');
-    this.petService.updatePet(this.pet)
+    this.petService.updatePet({...this.pet, ...form.value})
       .subscribe(createdPet => {
         console.log(createdPet);
         this.pet = new Pet();

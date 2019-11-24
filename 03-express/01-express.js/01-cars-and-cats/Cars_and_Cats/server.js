@@ -6,7 +6,6 @@ app.get('/', (request, response) => {
    response.send("Fuck yeah friday!");
 });
 
-
 app.listen(8000, () => console.log("listening on port 8000"));
 app.use(express.static(__dirname + "/static"));
 app.set('view engine', 'ejs');

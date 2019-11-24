@@ -38,6 +38,7 @@ module.exports = {
         });
     },
     update(req, res ){
+        console.log('updating pet', req.body);
         const petId = req.params.petId
         Pet.findByIdAndUpdate(petId,req.body,{ new: true, runValidators: true})
         .then(pet =>{
